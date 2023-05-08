@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="m-4 p-4" action="#" th:action="@{/schedule-update}" th:object="${schedule}" method="post">
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="firstName">First name</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" th:field="*{name}" id="firstName" placeholder="Name">
+            <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">HEHE</div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="lastName">Time</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="time" th:field="*{time}" id="lastName" placeholder="Time">
+            <div class="text-danger" th:if="${#fields.hasErrors('time')}" th:errors="*{time}">HEHE</div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="classroom">Classroom</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" th:field="*{classroom}" id="classroom" placeholder="Classroom">
+            <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{classroom}">HEHE</div>
+        </div>
+    </div>
+    <input  class="btn btn-success" type="submit" value="Create">
+</form>
+</body>
+</html>
